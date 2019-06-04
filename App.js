@@ -5,6 +5,7 @@ const Pet = ({name,animal,breed}) => {
     React.createElement("h2",{},breed)
   ])
 }
+
 const App = () =>{
 
   return (
