@@ -1,6 +1,6 @@
 {
-  "extends": ["eslint:recommended", "prettier", "prettier/react"],
-  "plugins": [],
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["react", "jsx-a11y", "import"],
   "parserOptions": {
     "ecmaVersion": 2016,
     "sourceType": "module",
