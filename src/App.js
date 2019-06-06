@@ -2,12 +2,15 @@
 import React from 'react';
 import { render } from 'react-dom';
 import Pet from './Pet';
+import SearchParams from './SearchParams';
 
 const App = () => {
+  const loading = true;
   return (
     <div id="something-important">
       <h1>Adopt Me!</h1>
-      <Pet name="luna" animal="dog" breed="havanese" />
+      <SearchParams />
+      {loading ? <h3>...select an animal</h3> : <Pet />}
     </div>
 
     // React.createElement('div', { id: 'something-important' }, [
@@ -18,4 +21,4 @@ const App = () => {
   );
 };
 
-render(React.createElement(App), document.getElementById('root'));
+render(<App />, document.getElementById('root'));

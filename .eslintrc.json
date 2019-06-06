@@ -2,9 +2,12 @@
   "extends": ["airbnb", "prettier"],
   "rules": {
     "react/prop-types": 0,
-    "no-console": 1
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "no-console": 1,
+    "react-hooks/rules-of-hooks": 2,
+    "react-hooks/exhaustive-deps": 1
   },
-  "plugins": ["react", "jsx-a11y", "import"],
+  "plugins": ["react", "jsx-a11y", "import", "react-hooks"],
   "parserOptions": {
     "ecmaVersion": 2016,
     "sourceType": "module",
