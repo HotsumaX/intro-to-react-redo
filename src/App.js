@@ -7,11 +7,13 @@ import SearchParams from './SearchParams';
 const App = () => {
   const loading = true;
   return (
-    <div id="something-important">
-      <h1>Adopt Me!</h1>
-      <SearchParams />
-      {loading ? <h3>...select an animal</h3> : <Pet />}
-    </div>
+    <React.StrictMode>
+      <div id="something-important">
+        <h1>Adopt Me!</h1>
+        <SearchParams />
+        {loading ? <h3>...select an animal</h3> : <Pet />}
+      </div>
+    </React.StrictMode>
 
     // React.createElement('div', { id: 'something-important' }, [
     //   React.createElement('h1', {}, 'Adopt Me!'),
