@@ -11,13 +11,17 @@ const SearchParams = () => {
   const [pets, setPets] = useState([]);
 
   async function requestPets() {
-    const { animals } = await pet.animals({
-      location,
-      breed,
-      type: animal
-    });
-    setPets(animals || []);
-    console.log(animals);
+    try {
+      const { animals } = await pet.animals({
+        location,
+        breed,
+        type: animal
+      });
+      setPets(animals || []);
+      console.log(animals);
+    } catch {
+      console.error;
+    }
   }
 
   useEffect(() => {
