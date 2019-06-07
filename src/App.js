@@ -2,8 +2,10 @@
 /* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { render } from 'react-dom';
+import { Router } from '@reach/router';
 import Pet from './Pet';
 import SearchParams from './SearchParams';
+import Details from './Details';
 
 const App = () => {
   const loading = true;
@@ -11,7 +13,11 @@ const App = () => {
     <React.StrictMode>
       <div id="something-important">
         <h1>Adopt Me!</h1>
-        <SearchParams />
+        <Router>
+          <SearchParams path="/" />
+          <Details path="/details/:id" />
+        </Router>
+
         {loading ? <h3>...select an animal</h3> : <Pet />}
       </div>
     </React.StrictMode>
