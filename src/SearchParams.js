@@ -1,6 +1,8 @@
+/* eslint-disable no-console */
 /* eslint-disable jsx-a11y/label-has-for */
 import React, { useState, useEffect } from 'react';
 import pet, { ANIMALS } from '@frontendmasters/pet';
+import Results from './Results';
 import useDropdown from './useDropdown';
 
 const SearchParams = () => {
@@ -11,17 +13,13 @@ const SearchParams = () => {
   const [pets, setPets] = useState([]);
 
   async function requestPets() {
-    try {
-      const { animals } = await pet.animals({
-        location,
-        breed,
-        type: animal
-      });
-      setPets(animals || []);
-      console.log(animals);
-    } catch {
-      console.error;
-    }
+    const { animals } = await pet.animals({
+      location,
+      breed,
+      type: animal
+    });
+    setPets(animals || []);
+    console.log(animals);
   }
 
   useEffect(() => {
@@ -53,8 +51,9 @@ const SearchParams = () => {
         </label>
         <AnimalDropdown />
         <BreedDropdown />
-        <button type="button">Submit</button>
+        <button type="submit"> Submit</button>
       </form>
+      <Results pets={pets} />
     </div>
   );
 };
