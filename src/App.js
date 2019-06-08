@@ -11,7 +11,7 @@ const App = () => {
   const loading = true;
   return (
     <React.StrictMode>
-      <div id="something-important">
+      <div>
         <header>
           <Link to="/">Adopt Me!</Link>
         </header>
