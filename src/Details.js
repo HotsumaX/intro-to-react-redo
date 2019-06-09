@@ -1,13 +1,16 @@
-/* eslint-disable no-console */
 import React from 'react';
 import pet from '@frontendmasters/pet';
 
 class Details extends React.Component() {
-  state = {
-    loading: true
-  };
+  constructor(props) {
+    super(props);
 
-  componentDidMount = () => {
+    this.state = {
+      loading: true
+    };
+  }
+
+  componentDidMount() {
     pet.animal(this.props.id).then(({ animal }) => {
       this.setState({
         name: animal.name,
@@ -20,7 +23,7 @@ class Details extends React.Component() {
         loading: false
       });
     }, console.error);
-  };
+  }
 
   render() {
     if (this.state.loading) {
