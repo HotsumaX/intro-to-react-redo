@@ -20,7 +20,7 @@ const App = () => {
           <Details path="/details/:id" />
         </Router>
 
-        {loading ? <h3>...select an animal</h3> : <Pet />}
+        {/* {loading ? <h3>...select an animal</h3> : <Pet />} */}
       </div>
     </React.StrictMode>
 

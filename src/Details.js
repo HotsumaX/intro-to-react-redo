@@ -1,14 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import pet from '@frontendmasters/pet';
 
-class Details extends React.Component() {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      loading: true
-    };
-  }
+class Details extends Component {
+  state = {
+    loading: true
+  };
 
   componentDidMount() {
     pet.animal(this.props.id).then(({ animal }) => {
