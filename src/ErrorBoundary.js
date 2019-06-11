@@ -17,7 +17,7 @@ class ErrorBoundary extends Component {
       return (
         <h1>
           there was an error with this listing.
-          <Link to="/">Click here</Link>
+          <Link to="/"> Click here </Link>
           to go back to the home page or wait five seconds
         </h1>
       );
