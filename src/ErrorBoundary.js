@@ -1,11 +1,20 @@
+/* eslint-disable no-console */
 import React, { Component } from 'react';
-import { Link } from '@reach/router';
+import { Link, Redirect } from '@reach/router';
 
 class ErrorBoundary extends Component {
-  state = { hasError: false };
+  state = { hasError: false, redirect: false };
 
   static getDerivedStateFromError() {
     return { hasError: true };
+  }
+
+  componentDidUpdate() {
+    const { hasError } = this.state;
+
+    if (hasError) {
+      setTimeout(() => this.setState({ redirect: true }), 5000);
+    }
   }
 
   componentDidCatch(error, info) {
@@ -13,7 +22,14 @@ class ErrorBoundary extends Component {
   }
 
   render() {
-    if (this.state.hasError) {
+    const { hasError } = this.state;
+    const { children } = this.props;
+
+    if (this.state.redirect) {
+      return <Redirect to="/" />;
+    }
+
+    if (hasError) {
       return (
         <h1>
           there was an error with this listing.
@@ -22,7 +38,7 @@ class ErrorBoundary extends Component {
         </h1>
       );
     }
-    return this.props.children;
+    return children;
   }
 }
 
