@@ -1,12 +1,16 @@
+/* eslint-disable react/destructuring-assignment */
 import React, { Component } from 'react';
 import pet from '@frontendmasters/pet';
+import { navigate } from '@reach/router';
 import Carousel from './Carousel';
 import ErrorBoundary from './ErrorBoundary';
 import ThemeContext from './ThemeContext';
+import Modal from './Modal';
 
 class Details extends Component {
   state = {
-    loading: true
+    loading: true,
+    showModal: false
   };
 
   componentDidMount() {
@@ -14,6 +18,7 @@ class Details extends Component {
 
     pet.animal(this.props.id).then(({ animal }) => {
       this.setState({
+        url: animal.url,
         name: animal.name,
         animal: animal.type,
         location: `${animal.contact.address.city},
@@ -26,6 +31,10 @@ class Details extends Component {
     }, console.error);
   }
 
+  toggleModal = () => this.setState({ showModal: !this.state.showModal });
+
+  adopt = () => navigate(this.state.url);
+
   render() {
     const {
       animal,
@@ -34,7 +43,8 @@ class Details extends Component {
       description,
       name,
       media,
-      loading
+      loading,
+      showModal
     } = this.state;
 
     if (loading) {
@@ -49,14 +59,38 @@ class Details extends Component {
           <h2>{`${animal} - ${breed} - ${location}`}</h2>
           <ThemeContext.Consumer>
             {([theme]) => (
-              <button style={{ backgroundColor: theme }} type="submit">
-                Adopt 
-                {' '}
+              <button
+                onClick={this.toggleModal}
+                style={{ backgroundColor: theme }}
+                type="button"
+              >
+                Adopt
                 {name}
               </button>
             )}
           </ThemeContext.Consumer>
           <p>{description}</p>
+          {showModal ? (
+            <Modal>
+              <div>
+                <h1>
+                  Would you like to adopt
+                  {name}
+?
+                </h1>
+                <div className="buttons">
+                  <button onClick={this.adopt} type="button">
+                    Yes
+                  </button>
+                  <button onClick={this.toggleModal} type="button">
+                    No, I am a monster
+                  </button>
+                </div>
+              </div>
+            </Modal>
+          ) : (
+            <div>one</div>
+          )}
         </div>
       </div>
     );
