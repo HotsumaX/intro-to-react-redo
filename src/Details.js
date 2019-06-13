@@ -96,6 +96,7 @@ class Details extends Component {
     );
   }
 }
+
 //   return = (
 //     <pre>
 //       <code>{JSON.stringify(props, null, 4)}</code>
