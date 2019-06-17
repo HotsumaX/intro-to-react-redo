@@ -43,8 +43,8 @@ class Details extends Component {
       description,
       name,
       media,
-      loading,
-      showModal
+      showModal,
+      loading
     } = this.state;
 
     if (loading) {
