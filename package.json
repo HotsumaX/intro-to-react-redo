@@ -4,6 +4,7 @@
   "description": "",
   "main": "App.js",
   "scripts": {
+    "clear-build-cache": "rm -rf .cache/ dist/",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier  \"src/**/*.{js,html}\" --write",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
