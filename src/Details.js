@@ -88,9 +88,7 @@ class Details extends Component {
                 </div>
               </div>
             </Modal>
-          ) : (
-            <div>one</div>
-          )}
+          ) : null}
         </div>
       </div>
     );

@@ -21,7 +21,6 @@ const App = () => {
             <SearchParams path="/" />
             <Details path="/details/:id" />
           </Router>
-
           {/* {loading ? <h3>...select an animal</h3> : <Pet />} */}
         </div>
       </ThemeContext.Provider>
