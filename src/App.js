@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { render } from 'react-dom';
 import { Router, Link } from '@reach/router';
-import Pet from './Pet';
+// import Pet from './Pet';
 import SearchParams from './SearchParams';
 import Details from './Details';
 import ThemeContext from './ThemeContext';
