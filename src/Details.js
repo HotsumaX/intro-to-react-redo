@@ -31,6 +31,7 @@ class Details extends Component {
           loading: false
         });
       })
+      // eslint-disable-next-line react/no-unused-state
       .catch(err => this.setState({ error: err }));
   }
 
