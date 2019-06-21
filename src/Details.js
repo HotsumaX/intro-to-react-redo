@@ -31,7 +31,7 @@ class Details extends Component {
           loading: false
         });
       })
-      // eslint-disable-next-line react/no-unused-state
+
       .catch(err => this.setState({ error: err }));
   }
 
@@ -52,12 +52,14 @@ class Details extends Component {
       name,
       media,
       showModal,
-      loading
+      loading,
+      error
     } = this.state;
 
-    if (loading) {
-      return <h1>Loading...</h1>;
-    }
+    // eslint-disable-next-line react/jsx-one-expression-per-line
+    if (error) return <h1>Error: {error}</h1>;
+
+    if (loading) return <h1>Loading...</h1>;
 
     return (
       <div className="details">
