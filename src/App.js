@@ -1,7 +1,6 @@
 /* eslint-disable import/no-named-as-default */
 /* eslint-disable react/jsx-filename-extension */
 import React, { useState } from 'react';
-import { render } from 'react-dom';
 import { Router } from '@reach/router';
 import SearchParams from './SearchParams';
 import Details from './Details';
