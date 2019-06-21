@@ -5,9 +5,9 @@ import { ServerLocation } from '@reach/router';
 import fs from 'fs';
 import App from '../src/App';
 
-const PORT = process.env.port || 3000;
+const PORT = process.env.PORT || 3000;
 
-const html = fs.readFileSync('dis/;index.html').toString();
+const html = fs.readFileSync('dist/index.html').toString();
 
 const parts = html.split('not rendered');
 
@@ -24,5 +24,6 @@ app.use((req, res) => {
   res.end();
 });
 
-console.log(`listening on${  Port}`);
+console.log(`listening on${PORT}`);
+
 app.listen(PORT);

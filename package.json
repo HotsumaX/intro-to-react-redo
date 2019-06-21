@@ -10,8 +10,8 @@
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "dev": "parcel src/index.html",
     "dev:mock": "cross-env PET_MOCK=mock parcel src/index.html",
-    "build": "parcel build --public-url ./dist/ src/ index.html",
-    "start": "npm run build && babel -node server/index.js"
+    "build": "parcel build --public-url ./dist/ src/index.html",
+    "start": "npm run build && babel-node server/index.js"
   },
   "repository": {
     "type": "git",
