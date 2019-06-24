@@ -8,10 +8,10 @@ import ThemeContext from './ThemeContext';
 import NavBar from './NavBar';
 
 const App = () => {
-  const themeHook = useState('darkblue');
+  const theme = useState('darkblue');
   return (
     <React.StrictMode>
-      <ThemeContext.Provider value={themeHook}>
+      <ThemeContext.Provider value={theme}>
         <div>
           <NavBar />
           <Router>
